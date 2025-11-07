@@ -1,20 +1,27 @@
 "use client";
 
+import Image from "next/image";
 import { useAuth } from "../../providers/AuthProvider";
 
 export default function UsuarioPage() {
   const { user } = useAuth();
   return (
-    <div className="p-8">
-      <h2 className="text-2xl font-bold text-blue-800 mb-4">Usuario</h2>
-      {user ? (
-        <div className="space-y-2 text-sm">
-          <p><span className="font-semibold">Email:</span> {user.email}</p>
-          {user.name && <p><span className="font-semibold">Nombre:</span> {user.name}</p>}
+    <div className="min-h-screen" style={{ backgroundColor: '#e1d3ea' }}>
+      {/* Panel a pantalla completa con imagen tipo marca de agua */}
+      <div className="relative min-h-[calc(100vh-0px)] w-full">
+        <Image
+          src="/veterinaria-mi-can.jpeg"
+          alt="Marca de agua clínica MiCAN"
+          fill
+          priority
+          className="object-contain opacity-30 md:opacity-35 pointer-events-none select-none"
+        />
+
+        {/* Heading superior izquierda */}
+        <div className="relative z-10 p-4 md:p-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-blue-900">Usuario</h2>
         </div>
-      ) : (
-        <p className="text-gray-600">No hay usuario autenticado.</p>
-      )}
+      </div>
     </div>
   );
 }

@@ -1,8 +1,23 @@
+import Image from "next/image";
+
 export default function PropietarioPage() {
   return (
-    <div className="p-8">
-      <h2 className="text-2xl font-bold text-blue-800 mb-4">Propietario</h2>
-      <p className="text-gray-600 text-sm">Aquí podrás gestionar la información de los propietarios (pendiente de implementación).</p>
+    <div className="min-h-screen" style={{ backgroundColor: '#e1d3ea' }}>
+      {/* Panel a pantalla completa con imagen tipo marca de agua */}
+      <div className="relative min-h-[calc(100vh-0px)] w-full">
+        <Image
+          src="/veterinaria-mi-can.jpeg"
+          alt="Marca de agua clínica MiCAN"
+          fill
+          priority
+          className="object-contain opacity-30 md:opacity-35 pointer-events-none select-none"
+        />
+
+        {/* Heading superior izquierda */}
+        <div className="relative z-10 p-4 md:p-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-blue-900">Propietario</h2>
+        </div>
+      </div>
     </div>
   );
 }
