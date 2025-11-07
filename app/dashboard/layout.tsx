@@ -54,17 +54,18 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 							})}
 						</nav>
 					</div>
-					<div className="flex items-center space-x-12">
-								<span className="text-sm md:text-base text-white/90 font-medium">
-							{user ? user.name || user.email : "Sin usuario"}
-						</span>
-								<div className="h-10 w-10 rounded-full bg-white/25 flex items-center justify-center text-white text-sm font-bold">
+					<div className="flex items-center space-x-4 pr-16">
+						{/* Avatar y nombre del usuario */}
+						<div className="h-10 w-10 rounded-full bg-white/25 flex items-center justify-center text-white text-sm font-bold">
 							{user?.email?.[0]?.toUpperCase() || "?"}
 						</div>
+						<span className="hidden sm:inline text-sm md:text-base text-white/90 font-medium max-w-[160px] truncate">
+							{user ? user.name || user.email : "Sin usuario"}
+						</span>
 					</div>
 
-					{/* Hamburguesa fija al borde derecho, visible en móvil */}
-					<div ref={menuRef} className="absolute right-4 top-1/2 -translate-y-1/2 md:hidden">
+					{/* Hamburguesa fija al borde derecho, visible en todas las resoluciones */}
+					<div ref={menuRef} className="absolute right-4 top-1/2 -translate-y-1/2">
 						<button
 							aria-label="Abrir menú"
 							onClick={() => setMenuOpen(v => !v)}
