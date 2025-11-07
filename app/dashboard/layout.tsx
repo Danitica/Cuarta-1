@@ -64,8 +64,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 						</span>
 					</div>
 
-					{/* Hamburguesa fija al borde derecho, visible en todas las resoluciones */}
-					<div ref={menuRef} className="absolute right-4 top-1/2 -translate-y-1/2">
+					{/* Hamburguesa fija al borde derecho, solo en móvil */}
+					<div ref={menuRef} className="absolute right-4 top-1/2 -translate-y-1/2 md:hidden">
 						<button
 							aria-label="Abrir menú"
 							onClick={() => setMenuOpen(v => !v)}
